@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Andersen_Homework2</string>
+    <string name="hello_toast">Hello toast</string>
 </resources>
