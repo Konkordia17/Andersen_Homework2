@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/helloWorldFragment">
+
+    <fragment
+        android:id="@+id/helloWorldFragment"
+        android:name="com.example.andersen_homework2.lesson1.HelloWorldFragment"
+        android:label="HelloWorldFragment">
+        <action
+            android:id="@+id/action_helloWorldFragment_to_helloToastFragment"
+            app:destination="@id/helloToastFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_helloConstraintFragment"
+            app:destination="@id/helloConstraintFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_scrollingTextFragment"
+            app:destination="@id/scrollingTextFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_firstActivity"
+            app:destination="@id/firstActivity" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_counterFragment"
+            app:destination="@id/counterFragment" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_threeButtonActivity"
+            app:destination="@id/threeButtonActivity" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_shoppingListActivity2"
+            app:destination="@id/shoppingListActivity2" />
+        <action
+            android:id="@+id/action_helloWorldFragment_to_implicitIntentsActivity"
+            app:destination="@id/implicitIntentsActivity" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/helloToastFragment"
+        android:name="com.example.andersen_homework2.lesson1.HelloToastFragment"
+        android:label="HelloToastFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/helloConstraintFragment"
+        android:name="com.example.andersen_homework2.lesson1.HelloConstraintFragment"
+        android:label="HelloConstraintFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/scrollingTextFragment"
+        android:name="com.example.andersen_homework2.lesson1.ScrollingTextFragment"
+        android:label="ScrollingTextFragment">
+
+    </fragment>
+    <activity
+        android:id="@+id/firstActivity"
+        android:name="com.example.andersen_homework2.lesson2.FirstActivity"
+        android:label="FirstActivity" />
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.example.andersen_homework2.lesson2.CounterFragment"
+        android:label="CounterFragment" />
+    <activity
+        android:id="@+id/threeButtonActivity"
+        android:name="com.example.andersen_homework2.lesson2.ThreeButtonActivity"
+        android:label="ThreeButtonActivity" />
+    <activity
+        android:id="@+id/shoppingListActivity2"
+        android:name="com.example.andersen_homework2.lesson2.ShoppingListActivity"
+        android:label="ShoppingListActivity" />
+    <activity
+        android:id="@+id/implicitIntentsActivity"
+        android:name="com.example.andersen_homework2.lesson2.ImplicitIntentsActivity"
+        android:label="ImplicitIntentsActivity" />
+</navigation>

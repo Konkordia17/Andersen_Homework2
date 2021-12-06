@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/eggs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Яйца" />
+
+    <Button
+        android:id="@+id/milk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Молоко" />
+
+    <Button
+        android:id="@+id/bread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="хлеб" />
+
+    <Button
+        android:id="@+id/oil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Масло" />
+
+    <Button
+        android:id="@+id/sausage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Колбаса" />
+
+    <Button
+        android:id="@+id/cheese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Сыр" />
+
+    <Button
+        android:id="@+id/tomato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Помидоры" />
+
+    <Button
+        android:id="@+id/cucumbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="огурцы" />
+
+    <Button
+        android:id="@+id/fish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Рыба" />
+
+    <Button
+        android:id="@+id/meat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Мясо" />
+
+
+</LinearLayout>

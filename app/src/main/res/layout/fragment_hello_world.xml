@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/helloWorldTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/nextToHelloToastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Toast Fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToHelloConstraintFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Constraint Fragment"
+        app:layout_constraintTop_toBottomOf="@id/nextToHelloToastFragment"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToScrollingTextFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scrolling Text Fragment"
+        app:layout_constraintTop_toBottomOf="@id/nextToHelloConstraintFragment"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToFirstActvity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First Actvity"
+        app:layout_constraintTop_toBottomOf="@id/nextToScrollingTextFragment"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToThreeButtonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Three button Fragment"
+        app:layout_constraintTop_toBottomOf="@id/nextToFirstActvity"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToShoppingList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shopping List"
+        app:layout_constraintTop_toBottomOf="@id/nextToThreeButtonFragment"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToCounterFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Counter Fragment"
+        app:layout_constraintTop_toBottomOf="@id/nextToShoppingList"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/nextToImplicitIntents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Implicit Intents"
+        app:layout_constraintTop_toBottomOf="@id/nextToCounterFragment"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

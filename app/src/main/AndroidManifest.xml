@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.andersen_homework2">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,9 +14,86 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"
+                    android:host="developer.android.com" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".lesson2.ThreeButtonActivity"
+            android:label="Three Button"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.ThreeButtonActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.ThreeTextsActivity"
+            android:label="Article"
+            android:parentActivityName=".lesson2.ThreeButtonActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.ThreeTextsActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.FirstActivity"
+            android:label="First Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.FirstActivity" />
+        </activity>
+        <activity android:name=".lesson2.SecondActivity"
+            android:label = "Second Activity"
+            android:parentActivityName=".lesson2.FirstActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.SecondActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.SayHelloActivity"
+            android:label="Say Hello!"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.SayHelloActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.ShoppingListActivity"
+            android:label="Shopping list"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.ShoppingListActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.ProductListActivity"
+            android:label="Product list"
+            android:parentActivityName=".lesson2.ShoppingListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.ProductListActivity" />
+        </activity>
+        <activity
+            android:name=".lesson2.ImplicitIntentsActivity"
+            android:label="Implicit Intents"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=
+                    "com.example.andersen_homework2.lesson2.ImplicitIntentsActivity" />
         </activity>
     </application>
 
