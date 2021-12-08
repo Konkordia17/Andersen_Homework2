@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ShareCompat
-import androidx.core.content.ContextCompat
 import com.example.andersen_homework2.databinding.ActivityImplicitsIntentsBinding
 
 class ImplicitIntentsActivity : AppCompatActivity() {
@@ -25,13 +24,14 @@ class ImplicitIntentsActivity : AppCompatActivity() {
             openWebsite()
         }
         binding.locButton.setOnClickListener {
-            openLocation()
+            checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION,
+                { openLocation() }, LOCATION_PERMISSION_CODE)
         }
         binding.shareButton.setOnClickListener {
             shareText()
         }
         binding.takePhotoButton.setOnClickListener {
-            takePhoto()
+            checkPermission(Manifest.permission.CAMERA, { takePhoto() }, PERMISSION_CODE)
         }
     }
 
@@ -47,6 +47,7 @@ class ImplicitIntentsActivity : AppCompatActivity() {
     }
 
     private fun openLocation() {
+
         val loc = binding.locEditText.text.toString()
         val addressUri = Uri.parse("geo:0,0?q=$loc")
         val intent = Intent(Intent.ACTION_VIEW, addressUri)
@@ -68,21 +69,42 @@ class ImplicitIntentsActivity : AppCompatActivity() {
             .startChooser()
     }
 
-    private fun checkPermission(permission: String, requestCode: Int) {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                permission
-            ) == PackageManager.PERMISSION_DENIED
-        ) {
-            ActivityCompat.requestPermissions(this, arrayOf(permission), requestCode)
+    private fun checkPermission(permission:String, function:()->Unit, code: Int) {
+        val isPermissionGranted = ActivityCompat.checkSelfPermission(
+            this, permission
+        ) == PackageManager.PERMISSION_GRANTED
+        if (isPermissionGranted) {
+            function()
         } else {
-            Toast.makeText(this, "Permission already granted", Toast.LENGTH_SHORT).show()
+            requestPermission(permission, code)
+        }
+    }
+
+    private fun requestPermission(permission: String, code:Int) {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(permission), code
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }){
+            if(requestCode== PERMISSION_CODE){
+                takePhoto()
+            } else {
+                openLocation()
+            }
+        } else{
+            Toast.makeText(this, "измените настройки", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun takePhoto() {
-
-        checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE)
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
@@ -92,6 +114,7 @@ class ImplicitIntentsActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val CAMERA_PERMISSION_CODE = 1
+        const val PERMISSION_CODE = 5
+        const val LOCATION_PERMISSION_CODE = 2
     }
 }
