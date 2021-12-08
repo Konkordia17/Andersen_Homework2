@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.andersen_homework2">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -10,18 +24,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Andersen_Homework2">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http"
-                    android:host="developer.android.com" />
+
+                <data
+                    android:host="developer.android.com"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity
@@ -30,8 +49,7 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.ThreeButtonActivity" />
+                android:value="com.example.andersen_homework2.lesson2.ThreeButtonActivity" />
         </activity>
         <activity
             android:name=".lesson2.ThreeTextsActivity"
@@ -39,8 +57,7 @@
             android:parentActivityName=".lesson2.ThreeButtonActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.ThreeTextsActivity" />
+                android:value="com.example.andersen_homework2.lesson2.ThreeTextsActivity" />
         </activity>
         <activity
             android:name=".lesson2.FirstActivity"
@@ -48,16 +65,15 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.FirstActivity" />
+                android:value="com.example.andersen_homework2.lesson2.FirstActivity" />
         </activity>
-        <activity android:name=".lesson2.SecondActivity"
-            android:label = "Second Activity"
+        <activity
+            android:name=".lesson2.SecondActivity"
+            android:label="Second Activity"
             android:parentActivityName=".lesson2.FirstActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.SecondActivity" />
+                android:value="com.example.andersen_homework2.lesson2.SecondActivity" />
         </activity>
         <activity
             android:name=".lesson2.SayHelloActivity"
@@ -65,8 +81,7 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.SayHelloActivity" />
+                android:value="com.example.andersen_homework2.lesson2.SayHelloActivity" />
         </activity>
         <activity
             android:name=".lesson2.ShoppingListActivity"
@@ -74,8 +89,7 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.ShoppingListActivity" />
+                android:value="com.example.andersen_homework2.lesson2.ShoppingListActivity" />
         </activity>
         <activity
             android:name=".lesson2.ProductListActivity"
@@ -83,8 +97,7 @@
             android:parentActivityName=".lesson2.ShoppingListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.ProductListActivity" />
+                android:value="com.example.andersen_homework2.lesson2.ProductListActivity" />
         </activity>
         <activity
             android:name=".lesson2.ImplicitIntentsActivity"
@@ -92,8 +105,7 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.andersen_homework2.lesson2.ImplicitIntentsActivity" />
+                android:value="com.example.andersen_homework2.lesson2.ImplicitIntentsActivity" />
         </activity>
     </application>
 
